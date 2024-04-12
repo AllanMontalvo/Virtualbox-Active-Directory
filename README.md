@@ -27,13 +27,15 @@ Step 1: Creating Vitual Boxes
 - Download Windows 10 iso and Windows Server 2022 iso files from Windows website.
 - Open Virtual Box and select "New".
 - Name the VM and select Windows Server 20222 iso with at least 8GB of RAM, 1 core processor, and 250GB of storage memeory.
-<p>
-<img src="https://i.imgur.com/oyvca2r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>  
+<img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/2c6c5e6a-63a4-47e7-91db-cfbf53b65f34" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 - Repeat the same process for creating a Windows 10 VM.
 <p>
 <img src="https://i.imgur.com/oyvca2r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+
+
 - Step 2
 - Step 3
 - Step 4
