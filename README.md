@@ -36,8 +36,22 @@ Step 1: Creating Vitual Boxes
 </p>
 
 
-- Step 2
-- Step 3
+Step 2: Setup DC-1
+- Start up DC-1 VM
+- Open System Properties and under "Computer Name" tab, select "Change" to rename computer.
+- Type "DC-1" in computer name and select "Ok"
+- Restart the computer and open "About this PC" to see the change of computer name.
+<p>
+  <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/ff355598-8912-4d6c-ac97-fd03c46cfc2d" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+
+Step 3: Download Active Directory
+- Open Server Manager
+- Under "Manage", select "Add Roles and Features"
+- Follow the steps and add "Active Diretory Domain Services" role.
+- Prompted for deployment configuration, select "Add a new forest" and create a domain name (e.g. mynetwork.net)
+- Continue with the configuration and restart DC-1
+- Log back in as mynetwork\labuser
 - Step 4
 
 <h2>Deployment and Configuration Steps</h2>
