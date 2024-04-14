@@ -7,18 +7,17 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 
 <h2>Environments and Technologies Used</h2>
 
+**Technologies and Servies**
 - Oracle VM VirtualBox
 - Active Directory Domain Services
 
 
-<h2>Programing Language</h2>
-
+**Programing Language**
 - PowerShell
 
-<h2>Operating Systems Used </h2>
-
+**Environment/Operating System**
 - Windows Server 2022
-- Windows 10 (21H2)
+- Windows 10
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
@@ -62,7 +61,17 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 - Continue with the configuration and restart DC-1.
 - Log back in as mynetwork\Administrator.
 
-**Step 4: DC-1 IP Configuration**
+**Step 4: Setup User Accounts in Active Directory**
+- Open "Active Direcoty Users and Computer" in DC-1.
+- Create new Organiztional Unit call "_EMPLOYEES".
+- Create a new employee name "Jane Hills" with user name "jane.admin" and a password.
+- Add "jane.admin" to the "Domain Admins" Security Group.
+- Log out of DC-1 and sign in with "mynetwork.net\jane.admin"
+<p>
+  <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/5b93c362-9605-4e60-94ec-19d29c74ca76 height="60%" width="60%" alt="Disk Sanitization Steps">
+</p>
+
+**Step 5: DC-1 IP Configuration**
 - Open control panel and select "Network and Sharing Center".
 - Select "Change adapter settings" and double-click "Ethernet".
 - Look for "Internet Protocol Version 4 (TCP/IPv4) and double-it.
@@ -72,7 +81,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/bf418515-d03b-4bd0-950b-628fa0cdb47d" height="40% width="40% alt="Disk Sanitization Steps"/>
 </p>
 
-**Steps 5: Setup Client-1**
+**Step 6: Setup Client-1**
 - Start up Client-1 VM.
 - Open "About this PC" and select "Advance system settings.
 - Under "Computer Name" tab, select "Change" to rename computer.
@@ -83,7 +92,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 </p>
 
 
-**Step 6: Client-1 IP Configuration**
+**Step 7: Client-1 IP Configuration**
 - Open control panel and select "Network and Sharing Center"
 - Select "Change adapter settings" and double-click "Ethernet"
 - Look for "Internet Protocol Version 4 (TCP/IPv4) and double-it.
@@ -94,7 +103,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
   <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/9654f0ad-95b7-4338-a7f6-cf99e7921b9a" height=80% width="80%" alt="Disk Sanitization Steps">
 </p>
 
-**Step 7: Connectivity**
+**Step 8: Connectivity**
 - On VirtualBox Manager, select "DC-1" and go to "Settings".
 - Under "Network", change "NAT" to "Host-only Adapter".
 - Checked "Cable Connected" under "Advance" and select "Ok".
@@ -103,7 +112,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
   <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/8d0f4792-c23a-45ad-848d-5d516386662c" height="80% width="80%" alt="Disk Sanitization Steps">
 </p>
 
-**Step 8: Verify Connectivity**
+**Step 9: Verify Connectivity**
 - Open command prompt on "Client-1".
 - ping DC-1 with command: ping <DC-1's IP address>
 <p>
@@ -111,27 +120,36 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 </p>
 
 
-
-<h2>Deployment and Configuration Steps</h2>
-
-
+**Step 10: Join Client-1 to Domain**
+- Open "Advance System Settings".
+- Under tab "Computer Name", click "Change".
+- Under "Member of" select "Domain" and type your domain name(mynetwork.net).
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/ffe010df-4d98-465c-80bb-7ec416653cdc" height="30%" width="30%" alt="Disk Sanitization Steps">
+
 </p>
+
+- Join the domain(mynetwork.net) and restart your computer.
+- Verify Client-1 is in domain by logging in DC-1, open Active Directory Users and Computer under "Computers".
+<p>
+  <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/2020752a-3688-493b-95a6-94192d4a440a" height=60% width=60% alt="Disk Sanitization Steps">
+</p>
+
+**Step 11: Create Additinal Users and Log In**
+- Log in DC-1 as "jane.admin".
+- Open PowerShell_ise as an adminstrator.
+- Run a script call Generate-Names-Create-Users.ps1
+- Once finished, open Active Directory Users and Computer and observe new users under "_EMPLOYEES"
+<p>
+  <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/54ef8f0c-1159-4524-a141-3ffe32efb9a6" height="60%" width="60%" alt="Disk Sanitization Steps">
+</p>
+
+- Log into Client-1 with one of the new users created.
+
+
+
+<h2>Final Notes</h2>
+In conclusion, this project has successfully demonstrated the process of setting up Active Directory within a VirtualBox environment. By following the detailed steps outlined, a functional directory service has been established, providing a controlled and scalable infrastructure for user and resource management.<br />
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+The use of VirtualBox for deploying Active Directory offers a flexible and cost-effective solution for simulation and testing purposes. It allows IT professionals and students alike to gain practical experience with Active Directory without the need for physical servers, making it an ideal learning tool.
