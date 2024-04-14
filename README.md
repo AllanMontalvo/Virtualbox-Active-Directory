@@ -72,7 +72,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 </p>
 
 **Step 5: DC-1 IP Configuration**
-- Open control panel and select "Network and Sharing Center".
+- Open control panel on DC-1 and select "Network and Sharing Center".
 - Select "Change adapter settings" and double-click "Ethernet".
 - Look for "Internet Protocol Version 4 (TCP/IPv4) and double-it.
 - Manually setup IP addresses (e.g. IP address:10.1.10.2, Subnet:255.0.0.0, Default gateway:10.1.10.1).
@@ -93,7 +93,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 
 
 **Step 7: Client-1 IP Configuration**
-- Open control panel and select "Network and Sharing Center"
+- Open control panel in Client-1 and select "Network and Sharing Center"
 - Select "Change adapter settings" and double-click "Ethernet"
 - Look for "Internet Protocol Version 4 (TCP/IPv4) and double-it.
 - Manually setup IP addresses (e.g. IP address:10.1.10.3, Subnet:255.0.0.0, Default gateway:10.1.10.1).
