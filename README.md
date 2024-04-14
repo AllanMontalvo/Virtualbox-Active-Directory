@@ -93,8 +93,8 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 
 
 **Step 7: Client-1 IP Configuration**
-- Open control panel in Client-1 and select "Network and Sharing Center"
-- Select "Change adapter settings" and double-click "Ethernet"
+- Open control panel in Client-1 and select "Network and Sharing Center".
+- Select "Change adapter settings" and double-click "Ethernet".
 - Look for "Internet Protocol Version 4 (TCP/IPv4) and double-it.
 - Manually setup IP addresses (e.g. IP address:10.1.10.3, Subnet:255.0.0.0, Default gateway:10.1.10.1).
 - Manually set DNS server address (e.g. Preferred DNS server:10.1.10.2, Alternate DNS server:10.1.10.1).
@@ -113,7 +113,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 </p>
 
 **Step 9: Verify Connectivity**
-- Open command prompt on "Client-1".
+- Open command prompt on Client-1.
 - ping DC-1 with command: ping <DC-1's IP address>
 <p>
 <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/6c70a7c9-13e2-4864-8b2a-8c750e9ce720" height=80%" width="80%" alt="Disk Sanitization Steps">
@@ -121,7 +121,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 
 
 **Step 10: Join Client-1 to Domain**
-- Open "Advance System Settings".
+- Open "Advance System Settings" in Client-1.
 - Under tab "Computer Name", click "Change".
 - Under "Member of" select "Domain" and type your domain name(mynetwork.net).
 <p>
@@ -136,7 +136,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 </p>
 
 **Step 11: Create Additinal Users and Log In**
-- Log in DC-1 as "jane.admin".
+- Log in DC-1 as "mynetwork\jane.admin".
 - Open PowerShell_ise as an adminstrator.
 - Run a script call Generate-Names-Create-Users.ps1
 - Once finished, open Active Directory Users and Computer and observe new users under "_EMPLOYEES"
