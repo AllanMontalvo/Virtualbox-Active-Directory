@@ -138,7 +138,7 @@ This tutorial outlines the implementation of Active Directory within VirtualBox.
 **Step 11: Create Additinal Users and Log In**
 - Log in DC-1 as "mynetwork\jane.admin".
 - Open PowerShell_ise as an adminstrator.
-- Run a script call Generate-Names-Create-Users.ps1 [Josh Madakor's source code]([https://github.com/AllanMontalvo/Virtualbox-Active-Directory](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1))
+- Run a script call Generate-Names-Create-Users.ps1 [(Josh Madokor's source code)](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
 - Once finished, open Active Directory Users and Computer and observe new users under "_EMPLOYEES"
 <p>
   <img src="https://github.com/AllanMontalvo/Virtualbox-Active-Directory/assets/135927674/54ef8f0c-1159-4524-a141-3ffe32efb9a6" height="60%" width="60%" alt="Disk Sanitization Steps">
